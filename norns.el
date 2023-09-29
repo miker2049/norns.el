@@ -463,7 +463,7 @@ Defaults to \"localhost\" if not a TRAMP path."
 
    (t
     (let* ((remote-host (--> (file-remote-p default-directory 'host)
-                             (s-chop-suffix (concat "." norns-mdns-domain) it))))
+                             (concat "." norns-mdns-domain) it)))
       (or remote-host "localhost")))))
 
 (defun norns--core-curr-http-port ()
